@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class SearchViem extends StatelessWidget {
@@ -16,19 +18,20 @@ class SearchViem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Center(
             child: TextField(
+              onChanged: (value) {
+                log(value);
+              },
               decoration: InputDecoration(
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
                 hintText: 'Enter city name',
-                prefixIcon: const Icon(Icons.search),
-                prefixIconColor: Colors.black,
+                suffixIcon: const Icon(Icons.search),
+                // label: const Text('Search'),
+                labelText: 'Search',
+                // label: const Icon(Icons.accessibility),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(0),
                     borderSide: const BorderSide(color: Colors.green)),
-                // enabledBorder: OutlineInputBorder(
-                //     borderRadius: BorderRadius.circular(16),
-                //     borderSide: const BorderSide(color: Colors.green)),
-                // focusedBorder: OutlineInputBorder(
-                //     borderRadius: BorderRadius.circular(16),
-                //     borderSide: const BorderSide(color: Colors.grey))
               ),
             ),
           ),
