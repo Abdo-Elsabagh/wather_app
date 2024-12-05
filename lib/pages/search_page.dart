@@ -18,7 +18,10 @@ class SearchViem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Center(
             child: TextField(
-              onChanged: (value) {
+              // onChanged: (value) {
+              //   log(value);
+              // },
+              onSubmitted: (value) {
                 log(value);
               },
               decoration: InputDecoration(
