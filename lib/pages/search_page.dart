@@ -1,6 +1,7 @@
-import 'dart:developer';
-
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:wather_app/model/weather_model.dart';
+import 'package:wather_app/services/weather_service.dart';
 
 class SearchViem extends StatelessWidget {
   const SearchViem({super.key});
@@ -21,8 +22,11 @@ class SearchViem extends StatelessWidget {
               // onChanged: (value) {
               //   log(value);
               // },
-              onSubmitted: (value) {
-                log(value);
+              onSubmitted: (value) async {
+                WeatherModel weatherModel =
+                    await WeatherService(Dio()).getWather(cityName: value);
+
+                Navigator.of(context).pop();
               },
               decoration: InputDecoration(
                 contentPadding:
