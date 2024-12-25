@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:wather_app/pages/search_page.dart';
+import 'package:wather_app/widget/no_weater_body.dart';
 import 'package:wather_app/widget/weather_info_body.dart';
 
-class Homeviem extends StatelessWidget {
+class Homeviem extends StatefulWidget {
   const Homeviem({super.key});
 
+  @override
+  State<Homeviem> createState() => _HomeviemState();
+}
+
+class _HomeviemState extends State<Homeviem> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +35,8 @@ class Homeviem extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: const WatherInfoBody());
+        body: weatherModel == null
+            ? const NowatherBody()
+            : const WatherInfoBody());
   }
 }

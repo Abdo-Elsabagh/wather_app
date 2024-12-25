@@ -23,7 +23,7 @@ class SearchViem extends StatelessWidget {
               //   log(value);
               // },
               onSubmitted: (value) async {
-                WeatherModel weatherModel =
+                weatherModel =
                     await WeatherService(Dio()).getWather(cityName: value);
 
                 Navigator.of(context).pop();
@@ -45,3 +45,5 @@ class SearchViem extends StatelessWidget {
         ));
   }
 }
+
+WeatherModel? weatherModel;
