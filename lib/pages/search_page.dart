@@ -34,7 +34,7 @@ class SearchViem extends StatelessWidget {
                 hintText: 'Enter city name',
                 suffixIcon: const Icon(Icons.search),
                 // label: const Text('Search'),
-                labelText: 'Search',
+                labelText: 'Search 🔍',
                 // label: const Icon(Icons.accessibility),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wather_app/pages/search_page.dart';
 
 class WatherInfoBody extends StatelessWidget {
   const WatherInfoBody({super.key});
@@ -10,11 +11,12 @@ class WatherInfoBody extends StatelessWidget {
           child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text('Alexandria',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-          const Text(
-            'updated at 23:46',
-            style: TextStyle(
+          Text(weatherModel!.cityName,
+              style:
+                  const TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+          Text(
+            'updated at ${weatherModel!.date}',
+            style: const TextStyle(
               fontSize: 24,
             ),
           ),
