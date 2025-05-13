@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wather_app/pages/search_page.dart';
 import 'package:wather_app/widget/no_weater_body.dart';
-import 'package:wather_app/widget/weather_info_body.dart';
 
 class Homeviem extends StatefulWidget {
   const Homeviem({super.key});
@@ -34,8 +33,6 @@ class _HomeviemState extends State<Homeviem> {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: weatherModel == null
-            ? const NowatherBody()
-            : const WatherInfoBody());
+        body: const NowatherBody());
   }
 }
