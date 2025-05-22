@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wather_app/cubits/get_waether_cubit/get_weather_cubit.dart';
 import 'package:wather_app/pages/home_page.dart';
 
 void main() {
@@ -11,9 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Homeviem(),
+    return BlocProvider(
+      create: (context) => GetWeatherCubit(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Homeviem(),
+      ),
     );
   }
 }
