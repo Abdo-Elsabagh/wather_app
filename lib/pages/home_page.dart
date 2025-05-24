@@ -42,7 +42,9 @@ class _HomeviemState extends State<Homeviem> {
         if (state is WeatherInitialstate) {
           return const NowatherBody();
         } else if (state is WeatherLaodedState) {
-          return const WeatherInfoBody();
+          return WeatherInfoBody(
+            weatherModel: state.weatherModel,
+          );
         } else {
           return const Center(
               child: Text(

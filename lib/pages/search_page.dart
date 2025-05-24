@@ -1,7 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:wather_app/model/weather_model.dart';
-import 'package:wather_app/services/weather_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wather_app/cubits/get_waether_cubit/get_weather_cubit.dart';
 
 class SearchViem extends StatelessWidget {
   const SearchViem({super.key});
@@ -23,7 +22,9 @@ class SearchViem extends StatelessWidget {
               //   log(value);
               // },
               onSubmitted: (value) async {
-               Navigator.of(context).pop();
+                var getWeatherCubit = BlocProvider.of<GetWeatherCubit>(context);
+                getWeatherCubit.getWeather(cityName: value);
+                Navigator.of(context).pop();
               },
               decoration: InputDecoration(
                 contentPadding:
@@ -42,4 +43,3 @@ class SearchViem extends StatelessWidget {
         ));
   }
 }
-
