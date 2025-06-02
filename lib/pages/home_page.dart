@@ -18,7 +18,6 @@ class _HomeviemState extends State<Homeviem> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         actions: [
           IconButton(
               onPressed: () {
@@ -42,9 +41,7 @@ class _HomeviemState extends State<Homeviem> {
         if (state is WeatherInitialstate) {
           return const NowatherBody();
         } else if (state is WeatherLaodedState) {
-          return WeatherInfoBody(
-            weatherModel: state.weatherModel,
-          );
+          return const WeatherInfoBody();
         } else {
           return const Center(
               child: Text(

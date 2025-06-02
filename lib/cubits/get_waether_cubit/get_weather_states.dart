@@ -9,4 +9,7 @@ class WeatherLaodedState extends WeatherState {
   WeatherLaodedState({required this.weatherModel});
 }
 
-class WeatherFailureState extends WeatherState {}
+class WeatherFailureState extends WeatherState {
+  final String errorMassage;
+  WeatherFailureState({required this.errorMassage});
+}
