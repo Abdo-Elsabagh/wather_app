@@ -18,6 +18,7 @@ class _HomeviemState extends State<Homeviem> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         actions: [
           IconButton(
               onPressed: () {
@@ -28,12 +29,12 @@ class _HomeviemState extends State<Homeviem> {
               icon: const Icon(
                 Icons.search,
                 size: 26,
-                color: Colors.white,
+                color: Colors.black  ,
               ))
         ],
         title: const Text(
           'Wather App',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body:
@@ -41,13 +42,18 @@ class _HomeviemState extends State<Homeviem> {
         if (state is WeatherInitialstate) {
           return const NowatherBody();
         } else if (state is WeatherLaodedState) {
-          return const WeatherInfoBody();
+          return WeatherInfoBody(
+            wearther: state.weatherModel,
+          );
         } else {
-          return const Center(
-              child: Text(
-            'opps there was an error',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ));
+          return const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Center(
+                child: Text(
+              'opps, there was an error.\nPlease check the city name and try again',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            )),
+          );
         }
       }),
     );
